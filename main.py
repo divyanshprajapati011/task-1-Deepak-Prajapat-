@@ -56,21 +56,7 @@ def view_employees():
 
 
 def update_employee():
-    query = "SELECT * FROM ems"
-    mycursor.execute(query)
-    result = mycursor.fetchall()
-
-    if not result:
-        print("No employees found.")
-        return
-
-    print("\n Employee List:")
-    print("{:<10} {:<20} {:<10} {:<15} {:<10}".format("Emp ID", "Name", "Age", "Role", "Salary"))
-    print("-" * 70)
-
-    for row in result:
-        emp_id, name, age, role, salary = row
-        print("{:<10} {:<20} {:<10} {:<15} {:<10}".format(emp_id, name, age, role, salary))
+    view_employees()
     emp_id = int(input("Enter employee ID to update: "))
     name = input("Enter new name: ")
     age = int(input("Enter new age: "))
@@ -82,21 +68,7 @@ def update_employee():
     print(" Employee updated successfully.")
 
 def delete_employee():
-    query = "SELECT * FROM ems"
-    mycursor.execute(query)
-    result = mycursor.fetchall()
-
-    if not result:
-        print("No employees found.")
-        return
-
-    print("\n Employee List:")
-    print("{:<10} {:<20} {:<10} {:<15} {:<10}".format("Emp ID", "Name", "Age", "Role", "Salary"))
-    print("-" * 70)
-
-    for row in result:
-        emp_id, name, age, role, salary = row
-        print("{:<10} {:<20} {:<10} {:<15} {:<10}".format(emp_id, name, age, role, salary))
+    view_employees()
     emp_id = int(input("Enter employee ID to delete: "))
     query = "DELETE FROM ems WHERE empid=%s"
     mycursor.execute(query, (emp_id,))

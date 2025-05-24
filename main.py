@@ -56,6 +56,21 @@ def view_employees():
 
 
 def update_employee():
+    query = "SELECT * FROM ems"
+    mycursor.execute(query)
+    result = mycursor.fetchall()
+
+    if not result:
+        print("No employees found.")
+        return
+
+    print("\n Employee List:")
+    print("{:<10} {:<20} {:<10} {:<15} {:<10}".format("Emp ID", "Name", "Age", "Role", "Salary"))
+    print("-" * 70)
+
+    for row in result:
+        emp_id, name, age, role, salary = row
+        print("{:<10} {:<20} {:<10} {:<15} {:<10}".format(emp_id, name, age, role, salary))
     emp_id = int(input("Enter employee ID to update: "))
     name = input("Enter new name: ")
     age = int(input("Enter new age: "))

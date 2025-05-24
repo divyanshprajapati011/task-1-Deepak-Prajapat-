@@ -17,7 +17,7 @@ This is a basic Employee Management System written in Python that interacts with
 ## Requirements
 
 - Python 3.x
-- MySQL Server
+- MySQL Server    *** please cheak server ( ON ) before using this project 
 - `mysql-connector-python` package
 
 Install the MySQL connector for Python:
